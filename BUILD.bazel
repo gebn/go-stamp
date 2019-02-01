@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/gebn/go-stamp
+gazelle(name = "gazelle")
+
+go_library(
+    name = "stamp",
+    srcs = ["stamp.go"],
+    importpath = "github.com/gebn/go-stamp",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//build:go_default_library",
+        "//revision:go_default_library",
+    ],
+)
