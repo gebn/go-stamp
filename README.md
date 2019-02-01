@@ -1,5 +1,6 @@
 # Stamp
 
+[![Build Status](https://travis-ci.org/gebn/go-stamp.svg?branch=master)](https://travis-ci.org/gebn/go-stamp)
 [![GoDoc](https://godoc.org/github.com/gebn/go-stamp?status.svg)](https://godoc.org/github.com/gebn/go-stamp)
 [![Go Report Card](https://goreportcard.com/badge/github.com/gebn/go-stamp)](https://goreportcard.com/report/github.com/gebn/go-stamp)
 
