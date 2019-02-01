@@ -1,0 +1,25 @@
+sudo: false
+language: go
+env:
+  global:
+    - BAZEL_VERSION=0.22.0
+before_install:
+  - |
+    wget -O install.sh "https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh"
+    chmod +x install.sh
+install:
+  - |
+    ./install.sh --user
+    bazel shutdown  # prevents "WARNING: Running Bazel server needs to be killed, because the startup options are different."
+    rm -f install.sh
+script:
+  - |
+    bazel \
+      --host_jvm_args=-Xmx8000m \
+      --host_jvm_args=-Xms8000m \
+      build \
+      --config=ci \
+      --noshow_progress \
+      --noshow_loading_progress \
+      --local_resources=8500,2,1.0 \
+      :go_default_library
