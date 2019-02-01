@@ -5,4 +5,9 @@ go_library(
     srcs = ["build.go"],
     importpath = "github.com/gebn/go-stamp/build",
     visibility = ["//visibility:public"],
+    x_defs = {
+        "User": "{BUILD_USER}",
+        "Host": "{BUILD_HOST}",
+        "Timestamp": "{BUILD_TIMESTAMP}",
+    },
 )
