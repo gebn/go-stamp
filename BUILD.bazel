@@ -5,7 +5,7 @@ load("@bazel_gazelle//:def.bzl", "gazelle")
 gazelle(name = "gazelle")
 
 go_library(
-    name = "stamp",
+    name = "go_default_library",
     srcs = ["stamp.go"],
     importpath = "github.com/gebn/go-stamp",
     visibility = ["//visibility:public"],
