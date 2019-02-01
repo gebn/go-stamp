@@ -24,7 +24,8 @@ var (
 	Describe string
 )
 
-// String returns a human-readable summary of the revision metadata.
+// String returns a human-readable summary of the revision metadata, e.g.
+// "1.0.0-1-g157ed0b (157ed0bb7b7de3c4c2e750a5b9ee675e2997ea80, master)".
 func String() string {
 	return fmt.Sprintf("%v (%v, %v)", Describe, Commit, Branch)
 }

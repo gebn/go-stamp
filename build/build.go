@@ -35,7 +35,8 @@ func Time() time.Time {
 	return time.Unix(i, 0)
 }
 
-// String returns a human-readable summary of the build metadata.
+// String returns a human-readable summary of the build metadata, e.g.
+// "built with go1.11.5 by george@dev on 2019-02-01T22:45:21Z".
 func String() string {
 	return fmt.Sprintf("built with %v by %v@%v on %v", Runtime, User,
 		Host, Time().Format(time.RFC3339))
