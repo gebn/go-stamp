@@ -10,26 +10,30 @@ Stamp exposes information about the build (user, fqdn, time) and code version (d
 
 To include the library, add the following to your `WORKSPACE`:
 
-    load("@bazel_gazelle//:deps.bzl", "go_repository")
-    go_repository(
-        name = "com_github_gebn_go_stamp",
-        commit = "810b8c5846be228396fcc85dba20908c49ef4d77",
-        importpath = "github.com/gebn/go-stamp",
-    )
+```python
+load("@bazel_gazelle//:deps.bzl", "go_repository")
+go_repository(
+    name = "com_github_gebn_go_stamp",
+    commit = "810b8c5846be228396fcc85dba20908c49ef4d77",
+    importpath = "github.com/gebn/go-stamp",
+)
+```
 
 Stamp uses [`workspace_status_command`](https://docs.bazel.build/versions/master/user-manual.html#flag--workspace_status_command) to set variables to the correct value at link time.
 Unfortunately there does not currently appear to be a way to add keys to the workspace status within a library, so this must be set up on the root project.
 Create an executable script with the following contents somewhere in your project, e.g. `bin/workspace_status` (if you already have this set up, you just need to add the three `echo` lines to your existing script):
 
-    #!/bin/bash
+```bash
+#!/bin/bash
 
-    set -o errexit
-    set -o nounset
-    set -o pipefail
+set -o errexit
+set -o nounset
+set -o pipefail
 
-    echo "STABLE_GIT_DESCRIBE $(git describe --always --tags --dirty)"
-    echo "STABLE_GIT_COMMIT $(git rev-parse HEAD)"
-    echo "STABLE_GIT_BRANCH $(git rev-parse --abbrev-ref HEAD)"  # will be HEAD in detached HEAD state
+echo "STABLE_GIT_DESCRIBE $(git describe --always --tags --dirty)"
+echo "STABLE_GIT_COMMIT $(git rev-parse HEAD)"
+echo "STABLE_GIT_BRANCH $(git rev-parse --abbrev-ref HEAD)"  # will be HEAD in detached HEAD state
+```
 
 Then add the following line to `.bazelrc` to execute the script during the build:
 
@@ -37,16 +41,18 @@ Then add the following line to `.bazelrc` to execute the script during the build
 
 You can test everything is working by calling `String()` in your project, which summarises all information gathered by this library:
 
-    package main
+```go
+package main
 
-    import (
-        "fmt"
-        "github.com/gebn/go-stamp"
-    )
+import (
+    "fmt"
+    "github.com/gebn/go-stamp"
+)
 
-    func main() {
-        fmt.Println(stamp.String())
-    }
+func main() {
+    fmt.Println(stamp.String())
+}
+```
 
 This should print something similar to:
 
@@ -56,8 +62,10 @@ This should print something similar to:
 
 If using [Kingpin](https://github.com/alecthomas/kingpin), Stamp can be integrated like this:
 
-    func main() {
-        kingpin.Version(stamp.String())
-        kingpin.Parse()
-        // ...
-    }
+```go
+func main() {
+    kingpin.Version(stamp.String())
+    kingpin.Parse()
+    // ...
+}
+```
