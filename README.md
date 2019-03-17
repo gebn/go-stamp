@@ -39,7 +39,7 @@ Then add the following line to `.bazelrc` to execute the script during the build
 
     build --workspace_status_command=bin/workspace_status
 
-You can test everything is working by calling `String()` in your project, which summarises all information gathered by this library:
+You can test everything is working by calling `Summary()` in your project, which summarises all information gathered by this library:
 
 ```go
 package main
@@ -50,7 +50,7 @@ import (
 )
 
 func main() {
-    fmt.Println(stamp.String())
+    fmt.Println(stamp.Summary())
 }
 ```
 
@@ -64,7 +64,7 @@ If using [Kingpin](https://github.com/alecthomas/kingpin), Stamp can be integrat
 
 ```go
 func main() {
-    kingpin.Version(stamp.String())
+    kingpin.Version(stamp.Version) // or indeed the full .Summary() for everything
     kingpin.Parse()
     // ...
 }
