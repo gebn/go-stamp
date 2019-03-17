@@ -21,7 +21,7 @@ go_repository(
 
 Stamp uses a combination of [`workspace_status_command`](https://docs.bazel.build/versions/master/user-manual.html#flag--workspace_status_command) and [`x_defs`](https://github.com/bazelbuild/rules_go/blob/master/go/core.rst#id22) to substitute values of Go `var`s at link time. Unfortunately, there does not currently appear to be a way to add to the workspace status from Starlark, so this must be manually configured.
 
-First, create an executable script with the following contents somewhere in your workspace, e.g. `bin/workspace_status` (if you already have a workspace status script, you just need to add the three `echo` lines to it):
+First, create an executable script with the following contents somewhere in your workspace, e.g. `bin/workspace_status` (if you already have a workspace status script, you just need to add the three `echo` lines to it). N.B. due to [this](https://github.com/bazelbuild/bazel/issues/5002) issue, having Bazel execute a script in the workspace root is awkward.
 
 ```bash
 #!/bin/bash
