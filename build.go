@@ -15,7 +15,7 @@ var (
 	// built on.
 	Host string
 
-	// Timestamp is when the library was built, represented as the
+	// timestamp is when the library was built, represented as the
 	// number of seconds since the epoch. Use Time() to get this value
 	// in a form that is easier to work with.
 	timestamp string
