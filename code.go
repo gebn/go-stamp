@@ -5,14 +5,16 @@ import (
 )
 
 var (
-	// Commit is the SHA-1 hash of the revision that was built to
-	// produce this library.
+	// Commit is the unique identifier of the revision that was built
+	// to produce this library. If using the provided `workspace_status`
+	// script, this is the SHA-1 hash of the revision.
 	Commit string
 
 	// Branch is the name of the branch the above commit was on at
-	// the time the library was built. The CI pipeline checks out a
-	// specific commit, meaning Git is in a detached HEAD state, so
-	// this will always be "HEAD" for official releases.
+	// the time the library was built.
+	// N.B. When using Git, most CI systems check out a specific commit,
+	// meaning Git is in a detached HEAD state, so this will usually be
+	// "HEAD" for official releases.
 	Branch string
 
 	// Version is a human-readable alternative to Commit, providing
