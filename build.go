@@ -21,11 +21,11 @@ var (
 	timestamp string
 )
 
-// Time returns the build time string in its native representation. If
-// the build time was not provided, returns the zero time instant.
+// Time returns the build time. Returns the zero time instant if the
+// build time is unavailable.
 func Time() time.Time {
 	// the timestamp is really System.currentTimeMillis() / 1000, which
-	// is a 64-bit type, so we parse it as such rather than with Atoi().
+	// is a 64-bit type, so we parse it as such rather than with Atoi()
 	i, err := strconv.ParseInt(timestamp, 10, 64)
 	if err != nil {
 		return time.Time{}
