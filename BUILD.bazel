@@ -18,8 +18,8 @@ go_library(
         "User": "{BUILD_USER}",
         "Host": "{BUILD_HOST}",
         "timestamp": "{BUILD_TIMESTAMP}",
-        "Commit": "{STABLE_GIT_COMMIT}",
-        "Branch": "{STABLE_GIT_BRANCH}",
-        "Describe": "{STABLE_GIT_DESCRIBE}",
+        "Commit": "{STABLE_STAMP_COMMIT}",
+        "Branch": "{STABLE_STAMP_BRANCH}",
+        "Version": "{STABLE_STAMP_VERSION}",
     },
 )
