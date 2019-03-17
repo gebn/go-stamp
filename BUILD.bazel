@@ -6,11 +6,20 @@ gazelle(name = "gazelle")
 
 go_library(
     name = "go_default_library",
-    srcs = ["stamp.go"],
+    srcs = [
+        "build.go",
+        "code.go",
+        "doc.go",
+        "summary.go",
+    ],
     importpath = "github.com/gebn/go-stamp",
     visibility = ["//visibility:public"],
-    deps = [
-        "//build:go_default_library",
-        "//revision:go_default_library",
-    ],
+    x_defs = {
+        "User": "{BUILD_USER}",
+        "Host": "{BUILD_HOST}",
+        "timestamp": "{BUILD_TIMESTAMP}",
+        "Commit": "{STABLE_GIT_COMMIT}",
+        "Branch": "{STABLE_GIT_BRANCH}",
+        "Describe": "{STABLE_GIT_DESCRIBE}",
+    },
 )
