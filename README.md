@@ -4,7 +4,7 @@
 [![GoDoc](https://godoc.org/github.com/gebn/go-stamp?status.svg)](https://godoc.org/github.com/gebn/go-stamp)
 [![Go Report Card](https://goreportcard.com/badge/github.com/gebn/go-stamp)](https://goreportcard.com/report/github.com/gebn/go-stamp)
 
-Stamp exposes information about the build (user, fqdn, time) and code version (description, commit, branch) at runtime.
+Stamp exposes information about the build (user, host, time) and code version (description, commit, branch) at runtime.
 
 ## Configuration
 
