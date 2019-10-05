@@ -37,7 +37,7 @@ echo "STABLE_STAMP_VERSION $(git describe --always --tags --dirty)"
 
 Then add the following line to `.bazelrc` to execute the script during the build:
 
-    build --workspace_status_command=bin/workspace_status
+    build --workspace_status_command=bin/workspace_status --stamp
 
 You can test everything is working by calling `Summary()` in your project, which summarises all information gathered by this library:
 
