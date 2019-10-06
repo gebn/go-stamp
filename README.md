@@ -57,15 +57,3 @@ func main() {
 This should print something similar to:
 
     v1.0.0-11-gcb25cf1 (cb25cf163fdb9f4d5033b9a4d70e9b259ef4b9b2, master), built with go1.11.5 by george@dev on 2019-02-01T21:07:53Z
-
-### Kingpin
-
-If using [Kingpin](https://github.com/alecthomas/kingpin), Stamp can be integrated like this:
-
-```go
-func main() {
-    kingpin.Version(stamp.Version) // or indeed the full .Summary() for everything
-    kingpin.Parse()
-    // ...
-}
-```
