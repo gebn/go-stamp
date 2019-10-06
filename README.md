@@ -46,6 +46,7 @@ package main
 
 import (
     "fmt"
+
     "github.com/gebn/go-stamp"
 )
 
@@ -56,4 +57,4 @@ func main() {
 
 This should print something similar to:
 
-    v1.0.0-11-gcb25cf1 (cb25cf163fdb9f4d5033b9a4d70e9b259ef4b9b2, master), built with go1.11.5 by george@dev on 2019-02-01T21:07:53Z
+    v1.0.0 (709d67c5f0563c685838312cb33a2a92ab1788f5, master), built with go1.13.1 by george@dev on 2019-10-05T18:09:58+01:00
