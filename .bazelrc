@@ -1,5 +1,7 @@
-build --workspace_status_command=bin/workspace_status --stamp
+build --stamp
+build --workspace_status_command=bin/workspace_status
+
 build:ci --verbose_failures
-build:ci --sandbox_debug
-build:ci --spawn_strategy=standalone
-build:ci --genrule_strategy=standalone
+build:ci --show_timestamps
+build:ci --noshow_progress
+build:ci --noshow_loading_progress
