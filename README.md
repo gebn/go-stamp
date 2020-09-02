@@ -13,9 +13,9 @@ To include the library, add the following to your `WORKSPACE`:
 ```python
 load("@bazel_gazelle//:deps.bzl", "go_repository")
 go_repository(
-    name = "com_github_gebn_go_stamp",
+    name = "com_github_gebn_go_stamp_v2",
     tag = "v2.1.0",
-    importpath = "github.com/gebn/go-stamp",
+    importpath = "github.com/gebn/go-stamp/v2",
 )
 ```
 
@@ -47,7 +47,7 @@ package main
 import (
     "fmt"
 
-    "github.com/gebn/go-stamp"
+    "github.com/gebn/go-stamp/v2"
 )
 
 func main() {
