@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/gebn/go-stamp"
+	"github.com/gebn/go-stamp/v2"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"

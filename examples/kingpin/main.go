@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/alecthomas/kingpin"
-	"github.com/gebn/go-stamp"
+	"github.com/gebn/go-stamp/v2"
 )
 
 func main() {
