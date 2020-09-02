@@ -1,4 +1,4 @@
-module github.com/gebn/go-stamp
+module github.com/gebn/go-stamp/v2
 
 go 1.14
 
