@@ -14,7 +14,7 @@ To include the library, add the following to your `WORKSPACE`:
 load("@bazel_gazelle//:deps.bzl", "go_repository")
 go_repository(
     name = "com_github_gebn_go_stamp",
-    tag = "v2.0.2",
+    tag = "v2.1.0",
     importpath = "github.com/gebn/go-stamp",
 )
 ```
