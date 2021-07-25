@@ -303,6 +303,9 @@ go_repository(
 
 go_repository(
     name = "org_golang_google_protobuf",
+    build_extra_args = [
+        "-exclude=**/testdata",
+    ],
     importpath = "google.golang.org/protobuf",
     sum = "h1:7QnIQpGRHE5RnLKnESfDoxm2dTapTZua5a0kS0A+VXQ=",
     version = "v1.26.0-rc.1",
