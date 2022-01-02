@@ -1,7 +1,7 @@
 # Stamp
 
-[![Build Status](https://travis-ci.org/gebn/go-stamp.svg?branch=master)](https://travis-ci.org/gebn/go-stamp)
-[![GoDoc](https://godoc.org/github.com/gebn/go-stamp?status.svg)](https://godoc.org/github.com/gebn/go-stamp)
+[![CI](https://github.com/gebn/go-stamp/actions/workflows/build.yaml/badge.svg)](https://github.com/gebn/go-stamp/actions/workflows/build.yaml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/gebn/go-stamp/v2.svg)](https://pkg.go.dev/github.com/gebn/go-stamp/v2)
 [![Go Report Card](https://goreportcard.com/badge/github.com/gebn/go-stamp)](https://goreportcard.com/report/github.com/gebn/go-stamp)
 
 Stamp exposes information about the build (user, host, time) and code version (description, commit, branch) at runtime.
@@ -14,7 +14,7 @@ To include the library, add the following to your `WORKSPACE`:
 load("@bazel_gazelle//:deps.bzl", "go_repository")
 go_repository(
     name = "com_github_gebn_go_stamp_v2",
-    tag = "v2.1.1",
+    tag = "v2.2.0",
     importpath = "github.com/gebn/go-stamp/v2",
 )
 ```
