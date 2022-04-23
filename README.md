@@ -14,7 +14,7 @@ To include the library, add the following to your `WORKSPACE`:
 load("@bazel_gazelle//:deps.bzl", "go_repository")
 go_repository(
     name = "com_github_gebn_go_stamp_v2",
-    tag = "v2.2.0",
+    tag = "v2.2.1",
     importpath = "github.com/gebn/go-stamp/v2",
 )
 ```
@@ -57,7 +57,7 @@ func main() {
 
 This should print something similar to:
 
-    v1.0.0 (709d67c5f0563c685838312cb33a2a92ab1788f5, master), built with go1.13.1 by george@dev on 2019-10-05T18:09:58+01:00
+    v1.0.0 (709d67c5f0563c685838312cb33a2a92ab1788f5, master), built with go1.18.1 by george@dev on 2022-04-23T18:29:58+01:00
 
 See [`examples`](examples/) for more detail.
 [`vanilla`](examples/vanilla/) demos using this library without Bazel.
