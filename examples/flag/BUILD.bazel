@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "flag_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/gebn/go-stamp/v2/examples/flag",
+    visibility = ["//visibility:private"],
+    deps = ["//:go-stamp"],
+)
+
+go_binary(
+    name = "flag",
+    embed = [":flag_lib"],
+    visibility = ["//visibility:public"],
+)
