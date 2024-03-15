@@ -1,7 +1,6 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_library")
-load("@bazel_gazelle//:def.bzl", "gazelle")
+load("@rules_go//go:def.bzl", "go_library")
+load("@gazelle//:def.bzl", "gazelle")
 
-# gazelle:prefix github.com/gebn/go-stamp/v2
 gazelle(name = "gazelle")
 
 go_library(
